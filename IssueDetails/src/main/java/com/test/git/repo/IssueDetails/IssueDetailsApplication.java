@@ -32,10 +32,8 @@ public class IssueDetailsApplication {
 		RestTemplate restTemplate = new RestTemplate();
 		HttpEntity<String> reqent = new HttpEntity<>(headers);
 		ResponseEntity<String> response =  restTemplate.exchange("https://api.github.com/orgs/att/repos",HttpMethod.GET,reqent, String.class);
-		//List<Repo> repos = new ArrayList<Repo>(); 
-	
 		
-		//String response = restTemplate.getForObject("https://api.github.com/orgs/att/issues?client_id=muni-annachi&client_secret=4da7c99d06e28d6bb148c4b6e650bc14a7f40d7d", String.class);
+
 		return response.getBody();
 	}
 }
